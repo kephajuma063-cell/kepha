@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jawabu Glassmart — Quality Glass & Mirrors</title>
+  <meta name="description" content="Jawabu Glassmart — premium glass, mirrors and custom glasswork. Browse products, request quotes, and contact us." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Jawabu Glassmart</a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="cart-btn" class="cart-btn" aria-label="View cart">Cart (<span id="cart-count">0</span>)</button></li>
+        </ul>
+      </nav>
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Jawabu Glassmart</h1>
+          <p class="lead">Premium glass, mirrors and bespoke glazing solutions for homes and businesses.</p>
+          <p><a class="btn" href="#products">Browse Products</a> <a class="btn ghost" href="#contact">Request a Quote</a></p>
+        </div>
+        <div class="hero-image" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=1200&q=60&auto=format&fit=crop" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services container">
+      <h2>Our Services</h2>
+      <div class="cards">
+        <div class="card reveal">
+          <h3>Custom Mirrors</h3>
+          <p>Made-to-measure mirrors for bathrooms, living rooms or gyms.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Glass Doors & Partitions</h3>
+          <p>Sleek, durable glass doors and office partitions with professional installation.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Repair & Replacement</h3>
+          <p>Fast, safe glass repair and replacement services at competitive prices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section products container">
+      <div class="section-header">
+        <h2>Featured Products</h2>
+        <div class="filters">
+          <label for="sort">Sort:</label>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price — Low to High</option>
+            <option value="price-desc">Price — High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="product-grid" class="product-grid" aria-live="polite">
+        <!-- Products injected by JS -->
+      </div>
+    </section>
+
+    <!-- Product modal -->
+    <div id="product-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+        <div class="modal-body" id="product-details">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+
+    <section id="contact" class="section contact container">
+      <h2>Contact & Request a Quote</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:info@jawabuglassmart.example">info@jawabuglassmart.example</a></p>
+          <p>Phone: +254 700 000 000</p>
+          <p>Address: Nairobi, Kenya</p>
+        </div>
+
+        <form id="contact-form" class="contact-form reveal" novalidate>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required minlength="2" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="message">Message / Quote details</label>
+          <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+
+          <button type="submit" class="btn">Send message</button>
+          <p id="contact-msg" class="form-msg" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Jawabu Glassmart — All rights reserved.</small>
+      <nav aria-label="Footer">
+        <a href="#products">Products</a> · <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your cart</h3>
+      <button id="close-cart" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items">
+      <!-- injected -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <strong id="cart-total">KSH 0</strong></div>
+      <button id="checkout-btn" class="btn">Checkout / Request Quote</button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
